@@ -176,7 +176,7 @@ function draw() {
         setTimeout(function () {
             clear();
             resolve();
-        }, 200);
+        }, 135);
     });
 }
 function clear() {
