@@ -128,7 +128,10 @@ function checkValue(board, row, column, value, draw = true) {
                 return false;
         }
     }
-    if (draw) document.getElementById(row + "-" + column).className = "center";
+    if (draw) {
+        document.getElementById(row + "-" + column).className = "center";
+        document.getElementById(row + "-" + column).style.color = "#40bdec";
+    }
 
     return true;
 }
