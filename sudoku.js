@@ -59,11 +59,9 @@ function swap(pos1, pos2) {
     }
 }
 function initBoard() {
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
+    for (let i = 0; i < 9; i++)
+        for (let j = 0; j < 9; j++)
             board[i][j] = 0;
-        }
-    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -109,16 +107,14 @@ function checkValue(board, row, column, value, draw = true) {
     //check row
     for (var i = 0; i < board.length; i++) {
         if (draw) document.getElementById(i + "-" + column).className = "visited";
-        if (board[i][column] === value) {
+        if (board[i][column] === value)
             return false;
-        }
     }
     //check umcolumnumn
     for (var i = 0; i < board[row].length; i++) {
         if (draw) document.getElementById(row + "-" + i).className = "visited";
-        if (board[row][i] === value) {
+        if (board[row][i] === value)
             return false;
-        }
     }
     //check squere
     boxRow = Math.floor(row / 3) * 3;
@@ -137,12 +133,10 @@ function checkValue(board, row, column, value, draw = true) {
     return true;
 }
 function nextEmptySpot(board) {
-    for (var i = 0; i < 9; i++) {
-        for (var j = 0; j < 9; j++) {
+    for (var i = 0; i < 9; i++)
+        for (var j = 0; j < 9; j++)
             if (board[i][j] === 0)
                 return [i, j];
-        }
-    }
 
     return [-1, -1];
 }
@@ -186,11 +180,9 @@ function draw() {
     });
 }
 function clear() {
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
+    for (let i = 0; i < 9; i++)
+        for (let j = 0; j < 9; j++)
             document.getElementById(i + "-" + j).className = "";
-        }
-    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -233,12 +225,14 @@ function disableButtons(disable) {
         solveButton.innerHTML = "Stop";
         solveButton.className = "stop";
         newBoardButton.style.pointerEvents = "none";
+        newBoardButton.style.color = "gray";
         board.style.pointerEvents = "none";
     }
     else {
         solveButton.innerHTML = "Solve";
         solveButton.className = "";
         newBoardButton.style.pointerEvents = "";
+        newBoardButton.style.color = "white";
         board.style.pointerEvents = "";
     }
 }
