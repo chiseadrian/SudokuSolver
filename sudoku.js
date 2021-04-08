@@ -32,9 +32,8 @@ window.onload = function () {
 function generateBoard() {
     initBoard();
     for (let i = 0; i < 9; i += 3) {
-        let pos = Math.floor(Math.random() * 2) + 1; // pos = 1 || 2
-        swap(i, i + pos);
-        swap(i, i + pos);
+        swap(i, i + 1);
+        swap(i, i + 2);
     }
 
     for (let i = 0; i < 9; i++)
